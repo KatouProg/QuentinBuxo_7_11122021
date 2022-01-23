@@ -1,98 +1,30 @@
 <template>
-  <div id="app">
-    <navi />
-
-     <div class="auth-wrapper0">
-       <div class="auth-inner0">
-         <router-view />
-       </div>
-     </div>
-     <footerb />
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
   </div>
+  <router-view/>
 </template>
 
-<script>
-
-import navi from './components/navi.vue'
-import home from './components/home.vue'
-import footerb from './components/footer.vue'
-
-export default {
-  name: 'App',
-  home,
-  components: {
-    navi,
-    footerb
-  }
-}
-
-</script>
-
-<style lang="scss">
-
-*{
-  box-align: border-box;
-}
-
-body{
-  background: #5e5e5e !important;
-  min-height: 100vh;
-  display: flex;
-  font-weight: 400;
-}
-
-h1, h2, h3, h4, h5, h6, label, span {
-  font-weight: 500;
-}
-
-body, html, #app, .auth-wrapper{
-  width: 100%;
-  height: 100%;
-}
-
+<style>
 #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #2c3e50;
 }
 
-.navbar-light {
-  background-color: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+#nav {
+  padding: 30px;
 }
 
-.auth-wrapper0{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
-.auth-inner0{
-  width: 98%;
-  height: 85%;
-  max-width: 1200px;
-  border-radius: 15px;
-  transition: all .3s;
-  margin-top: 50px;
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
-
-.auth-wrapper .form-control:focus{
-  border-color: #d1515a;
-  box-shadow: none;
-}
-
-.auth-wrapper h3{
-  text-align: center;
-  margin: 0;
-  line-height: 1;
-  padding-bottom: 20px;
-}
-
-.custom-control-label{
-  font-weight: 400;
-}
-
-@media screen and (max-width: 1100px) {
-}
-
 </style>
